@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Todo List 2022 with LocalStorage</title>
+	<!-- CSS Import -->
+	<link rel="stylesheet" href="app.css" />
+	<!-- End of CSS Import -->
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+	<!-- End of Fonts -->
+</head>
+<body>
+	<!-- App Wrapper -->
+	<main class="app">
+		<!-- Greeting -->
+		<section class="greeting">
+			<h2 class="title">
+				What's up, <input type="text" id="name" placeholder="Name here" />
+			</h2>
+		</section>
+		<!-- End of Greeting -->
+		
+		<!-- New Todo -->
+		<section class="create-todo">
+			<h2>CREATE A TODO</h2>
+			<form id="new-todo-form">
+				<h3>What's on your todo?</h3>
+				<input 
+					type="text" 
+					placeholder=" Make each day your masterpiece and dont forget to add your to do's here. "
+					name="content"
+					id="content" />
+				
+				<h3>Pick a category</h3>
+				<div class="options">
+					<label>
+						<input type="radio" name="category" id="category1" value="study" /> 
+						<span class="bubble study"></span>
+						<div>Study</div>
+					</label>
+					<label>
+						<input type="radio" name="category" id="category2" value="personal" />
+						<span class="bubble personal"></span>
+						<div>Personal</div>
+					</label>
+				</div>
+
+				<!-- Additional Features -->
+				<label>
+					Priority:
+					<select name="priority" id="priority">
+						<option value="low">Low</option>
+						<option value="medium">Medium</option>
+						<option value="high">High</option>
+					</select>
+				</label>
+
+				<label>
+					Due Date:
+					<input type="date" id="due-date" />
+				</label>
+
+				<label>
+					Notes:
+					<textarea id="notes" rows="4"></textarea>
+				</label>
+				<!-- Additional Functionality -->
+              <div class="additional-functionality">
+             <label for="dark-theme-toggle">Dark Theme:</label>
+                 <input type="checkbox" id="dark-theme-toggle" />
+                </div>
+
+				<!-- End of Additional Features -->
+
+				<input type="submit" value="Add todo" />
+			</form>
+		</section>
+		<!-- End of New Todo -->
+
+		<!-- Todo List -->
+		<section class="todo-list">
+			<h3>TODO LIST</h3>
+			<div class="list" id="todo-list"></div>
+		</section>
+		<!-- End of Todo List -->
+
+		<!-- Additional Features -->
+		<section class="additional-functionality">
+			<!-- Theme Customization -->
+			<label>
+				Theme Color:
+				<input type="color" id="theme-color" />
+			</label>
+
+			<!-- Clear Completed Button -->
+			<button id="clear-completed">Clear Completed</button>
+
+			<!-- Sort Button -->
+			<button id="sort-btn">Sort</button>
+
+			<!-- Filter Buttons -->
+			<div id="filter-buttons">
+				<button class="filter-btn" data-category="all">All</button>
+				<button class="filter-btn" data-category="study">Study</button>
+				<button class="filter-btn" data-category="personal">Personal</button>
+			</div>
+
+			<!-- Statistics -->
+			<div id="statistics">
+				<div id="total-todos"></div>
+				<div id="completed-todos"></div>
+			</div>
+		</section>
+		<!-- End of Additional Features -->
+
+		<!-- Clock and Date -->
+		<div class="clock-date">
+			<div id="clock"></div>
+			<div id="date"></div>
+		</div>
+		<!-- End of Clock and Date -->
+
+	</main>
+	<!-- End of App Wrapper -->
+
+	<!-- JS Import -->
+	<script src="app.js"></script>
+	<!-- End of JS Import -->
+</body>
+</html>
